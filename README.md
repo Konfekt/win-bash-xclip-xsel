@@ -7,9 +7,11 @@ Inside the console of WSL in Microsoft Windows 10:
 1. Save these scripts, say to `~/bin/`, and mark `xclip.sh` executable by
 
     ```sh
-    mkdir --parents ~/bin &&
-    git clone https://github.com/Konfekt/xclip-xsel-WSL &&
-    cp ~/bin/xclip-xsel-WSL/{clip.sh,xclip,xsel} &&
+    mkdir ~/Downloads
+    cd ~/Downloads
+    git clone https://github.com/Konfekt/xclip-xsel-WSL
+    mkdir --parents ~/bin
+    cp ~/Downloads/xclip-xsel-WSL/{clip.sh,xclip,xsel} ~/bin
     chmod a+x ~/bin/clip.sh
     ```
 
@@ -17,7 +19,7 @@ Inside the console of WSL in Microsoft Windows 10:
     For this, add to your file `~/.profile` (for Bash, or `~/.zshenv` for ZSH) the line
 
     ```sh
-    [ -z ${WSLENV+x} ] || export PATH="${PATH:+"$PATH:"}$HOME/bin/wsl-gui-bins"
+    [ -z ${WSLENV+x} ] || export PATH="${PATH:+"$PATH:"}$HOME/bin"
     ```
 
 # Related
