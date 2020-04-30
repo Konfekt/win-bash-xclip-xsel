@@ -14,9 +14,12 @@ Inside the console of WSL in Microsoft Windows 10:
     ```
 
 1. add the path of the folder that contains the obtained executables (say `~/bin`) to your environment variable `$PATH`:
-    If you use `bash` or `zsh`, by adding to `~/.profile` or `~/.zshenv` the line
+    For this, add to your file `~/.profile` (for Bash, or `~/.zshenv` for ZSH) the line
 
     ```sh
-        PATH=$PATH:~/bin
+    [ -z ${WSLENV+x} ] || export PATH="${PATH:+"$PATH:"}$HOME/bin/wsl-gui-bins"
     ```
 
+# Related
+
+The repository [wsl-gui-bins](https://github.com/Konfekt/wsl-gui-bins) contributes small Shell scripts to start common (GUI) applications from the `WSL` (Windows Subsystem for Linux) shell just like from a Linux shell.
