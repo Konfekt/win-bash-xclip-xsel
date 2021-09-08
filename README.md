@@ -1,4 +1,5 @@
 The script `clip.sh` and the two symlinks `xclip` and `xsel` are brute drop-in replacements for `xclip` and `xsel` to make them in `WSL` (Windows Subsystem for Linux) read and write on the Microsoft Windows clipboard instead of the Linux clipboard.
+For this to work, a parameter `-in/--input` or `-out/--output`, which specifies whether the clipboard is being read or written onto, must be passed (whereas `xclip` and `xsel` can infer it).
 
 # Installation
 
