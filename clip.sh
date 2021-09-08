@@ -18,17 +18,16 @@ pwsh="$pwsh -NoProfile -NoLogo -NonInteractive"
 for i in "$@"
 do
   case "$i" in
-  (-o|--output|-out)
-    $pwsh -command Get-Clipboard | sed 's/\r$//' | head -c -1
-    exit 0
-    ;;
-  (-i|--input|-in)
-    # tee <&0 | clip.exe
-    # To remove the appended newline:
-    TEMP="$(wslpath "$(cmd.exe /c "<nul set /p=%TEMP%" 2>/dev/null)")"
-    cat > "$TEMP/wsl_clipboard"
-    $pwsh -command "Get-Content ""\$env:TEMP\wsl_clipboard"" | Set-Clipboard"
-    exit 0
-    ;;
+    (-o|--output|-out)
+      $pwsh -command Get-Clipboard | sed 's/\r$//' | head -c -1
+      exit 0
+      ;;
+    (-i|--input|-in)
+      # instead of
+      #   tee <&0 | clip.exe
+      # remove the appended newline by:
+      $pwsh -command '($input | Out-String -Stream) -join "`r`n" | Set-Clipboard'
+      exit 0
+      ;;
   esac
 done
