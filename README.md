@@ -25,4 +25,4 @@ Inside the console of WSL in Microsoft Windows 10:
 
 # Related
 
-The repository [wsl-gui-bins](https://github.com/Konfekt/wsl-gui-bins) contributes small Shell scripts to start common (GUI) applications from the `WSL` (Windows Subsystem for Linux) shell just like from a Linux shell.
+The Vim plug-in [vim-wsl-copy-paste](https://github.com/Konfekt/vim-wsl-copy-paste) adds mappings in Vim under WSL to write and read on the Microsoft Windows clipboard 
