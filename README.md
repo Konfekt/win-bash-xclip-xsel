@@ -1,9 +1,9 @@
-The script `clip.sh` and the two symlinks `xclip` and `xsel` are brute drop-in replacements for `xclip` and `xsel` to make them in `WSL` (Windows Subsystem for Linux) read and write on the Microsoft Windows clipboard instead of the Linux clipboard.
-For this to work, a parameter `-in/--input` or `-out/--output`, which specifies whether the clipboard is being read or written onto, must be passed (whereas `xclip` and `xsel` can infer it).
+The script `clip.sh` and the two symlinks `xclip` and `xsel` are brute drop-in replacements for `xclip` and `xsel` to make them in [Git BASH](https://gitforwindows.org/) or [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) (Windows Subsystem for Linux)  read and write on the Microsoft Windows clipboard.
+For this to work, a parameter `-i/-in/--input` or `-o/-out/--output`, which specifies whether the clipboard is being read or written onto, must be passed (whereas `xclip` and `xsel` can infer it).
 
 # Installation
 
-Inside the console of WSL in Microsoft Windows 10:
+Inside the Git Bash or WSL terminal in Microsoft Windows 10:
 
 1. Save these scripts, say to `~/bin/`, and mark `xclip.sh` executable by
 
@@ -13,7 +13,13 @@ Inside the console of WSL in Microsoft Windows 10:
     ```
 
 1. add the path of the folder that contains the obtained executables (say `~/bin`) to your environment variable `$PATH`:
-    For this, add to your file `~/.profile` (for Bash, or `~/.zshenv` for ZSH) the line
+    For this, add to your file `~/.profile` (for Bash, or `~/.zshenv` for ZSH) the following line under Git Bash
+
+    ```sh
+    [ -z ${MSYSTEM+x} ] || export PATH="${PATH:+"$PATH:"}$HOME/bin"
+    ```
+
+    respectively under WSL
 
     ```sh
     [ -z ${WSLENV+x} ] || export PATH="${PATH:+"$PATH:"}$HOME/bin/xclip-xsel-WSL"
