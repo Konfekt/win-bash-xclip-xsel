@@ -13,17 +13,19 @@ Inside the Git Bash or WSL terminal in Microsoft Windows 10:
     ```
 
 1. add the path of the folder that contains the obtained executables (say `~/bin`) to your environment variable `$PATH`:
-    For this, add to your file `~/.profile` (for Bash, or `~/.zshenv` for ZSH) the following line under Git Bash
-
-    ```sh
-    [ -z ${MSYSTEM+x} ] || export PATH="${PATH:+"$PATH:"}$HOME/bin/win-bash-xclip-xsel"
-    ```
-
-    respectively under WSL
+    For this, add to your file `~/.profile` (for Bash, or `~/.zshenv` for ZSH) the following line under WSL
 
     ```sh
     [ -z ${WSLENV+x} ] || export PATH="${PATH:+"$PATH:"}$HOME/bin/win-bash-xclip-xsel"
     ```
+
+    respectively under Git Bash
+
+    ```sh
+    [ -z ${MSYSTEM+x} ] || export PATH="${PATH:+"$PATH:"}$HOME/bin/win-bash-xclip-xsel"
+    ```
+    
+    You may [replace symbolic links in Git by hard or soft links](https://stackoverflow.com/questions/5917249/git-symlinks-in-windows/16754068#16754068) (the latter requiring adminstrator privileges).
 
 # Related
 
