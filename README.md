@@ -9,20 +9,20 @@ Inside the Git Bash or WSL terminal in Microsoft Windows 10:
 
     ```sh
     mkdir ~/bin && cd ~/bin
-    git clone https://github.com/Konfekt/xclip-xsel-WSL
+    git clone https://github.com/Konfekt/win-bash-xclip-xsel
     ```
 
 1. add the path of the folder that contains the obtained executables (say `~/bin`) to your environment variable `$PATH`:
     For this, add to your file `~/.profile` (for Bash, or `~/.zshenv` for ZSH) the following line under Git Bash
 
     ```sh
-    [ -z ${MSYSTEM+x} ] || export PATH="${PATH:+"$PATH:"}$HOME/bin"
+    [ -z ${MSYSTEM+x} ] || export PATH="${PATH:+"$PATH:"}$HOME/bin/win-bash-xclip-xsel"
     ```
 
     respectively under WSL
 
     ```sh
-    [ -z ${WSLENV+x} ] || export PATH="${PATH:+"$PATH:"}$HOME/bin/xclip-xsel-WSL"
+    [ -z ${WSLENV+x} ] || export PATH="${PATH:+"$PATH:"}$HOME/bin/win-bash-xclip-xsel"
     ```
 
 # Related
