@@ -26,7 +26,7 @@ Inside the Git Bash or WSL terminal in Microsoft Windows 10 (or newer):
     ```
     
     You may [replace symbolic links in Git by hard or soft links](https://stackoverflow.com/questions/5917249/git-symlinks-in-windows/16754068#16754068) (the latter requiring adminstrator privileges).
-    In case `xclip` or `xsel` is already available on your system, see [here](https://github.com/Konfekt/win-bash-xclip-xsel/issues/2#issuecomment-1300222984) if either one takes precedence over those of this repository to that the Windows Clipboad is still not used: either uninstall it, or prepend the containing folder to `$PATH`.
+    In case `xclip` or `xsel` is already available on your system, see [here](https://github.com/Konfekt/win-bash-xclip-xsel/issues/2#issuecomment-1300222984) if either one takes precedence over those of this repository so that the Windows Clipboad is still not used: either uninstall it, or prepend its containing folder to `$PATH` (instead of appending it).
 
 # Related
 
